@@ -20,7 +20,7 @@ import java.nio.file.Paths;
 @CrossOrigin
 public class FileController {
 
-    //private final BatchService batchService;
+    private final BatchService batchService;
 /*
     @Autowired
     public FileController(BatchService batchService) {
