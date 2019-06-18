@@ -55,6 +55,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		        .and()
 		        .csrf()
 		        .disable();
+
+		// add this line to use H2 web console
+		http.headers().frameOptions().disable();
 	}
 
 	@Bean

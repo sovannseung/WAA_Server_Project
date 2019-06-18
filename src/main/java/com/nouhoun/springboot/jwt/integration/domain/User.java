@@ -17,6 +17,15 @@ public class User {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "studentid")
+    private String studentid;
+
+    @Column(name = "barcode")
+    private String barcode;
+
+    @Column(name = "entryid")
+    private Long entryid;
+
     @Column(name = "username")
     private String username;
 
@@ -44,6 +53,30 @@ public class User {
 
     public Long getId() {
         return id;
+    }
+
+    public String getStudentid() {
+        return studentid;
+    }
+
+    public void setStudentid(String studentid) {
+        this.studentid = studentid;
+    }
+
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
+
+    public Long getEntryid() {
+        return entryid;
+    }
+
+    public void setEntryid(Long entryid) {
+        this.entryid = entryid;
     }
 
     public void setId(Long id) {

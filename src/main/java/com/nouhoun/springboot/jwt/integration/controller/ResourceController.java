@@ -1,6 +1,8 @@
 package com.nouhoun.springboot.jwt.integration.controller;
 
+import com.nouhoun.springboot.jwt.integration.domain.Course;
 import com.nouhoun.springboot.jwt.integration.domain.RandomCity;
+import com.nouhoun.springboot.jwt.integration.domain.Student;
 import com.nouhoun.springboot.jwt.integration.domain.User;
 import com.nouhoun.springboot.jwt.integration.service.GenericService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +21,8 @@ import java.util.List;
  * Created by nydiarra on 06/05/17.
  */
 @RestController
-@RequestMapping({"/springjwt", "/actuator"})
+//@RequestMapping({"/springjwt", "/actuator"})
+@RequestMapping("/springjwt")
 public class ResourceController {
     @Autowired
     private GenericService userService;
@@ -37,24 +40,27 @@ public class ResourceController {
     }
 
     @RequestMapping(value ="/test", method = RequestMethod.GET)
-    public String getTest(){
-        String result="";
-        try {
-            String line="";
-            Process p = Runtime.getRuntime().exec("node -v");
-            BufferedReader input =
-                    new BufferedReader
-                            (new InputStreamReader(p.getInputStream()));
-            while ((line = input.readLine()) != null) {
-                System.out.println(line);
-                result = line;
-            }
-            input.close();
-        }
-        catch (Exception err) {
-            err.printStackTrace();
-        }
+    public List<User> getTest(){
 
-        return result;
+        return userService.findAllUsers();
+
+//        String result="";
+//        try {
+//            String line="";
+//            Process p = Runtime.getRuntime().exec("node -v");
+//            BufferedReader input =
+//                    new BufferedReader
+//                            (new InputStreamReader(p.getInputStream()));
+//            while ((line = input.readLine()) != null) {
+//                System.out.println(line);
+//                result = line;
+//            }
+//            input.close();
+//        }
+//        catch (Exception err) {
+//            err.printStackTrace();
+//        }
+//
+//        return result;
     }
 }
