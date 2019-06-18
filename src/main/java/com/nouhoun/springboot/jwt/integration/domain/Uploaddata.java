@@ -24,9 +24,7 @@ public class Uploaddata {
 
     private LocalDate ATTENDANCEDATE;
 
-    private String TYPE;
+    private String TYPES;
 
     private String LOCATION;
-
-    private String BARCODEID;
 }
