@@ -35,18 +35,22 @@ public class FileController {
         System.out.println("step1");
 
         byte[] bytes = file.getBytes();
-        if (file.getOriginalFilename().equals("attendance.csv")) {
-            Path path = Paths.get("./attendance.csv");
-            Files.write(path, bytes);
-            //batchService.startBarcode();
-        } else {
-            Path path = Paths.get("./manual.csv");
-            Files.write(path, bytes);
+        Path path = Paths.get("./manual.csv");
+        Files.write(path, bytes);
             //batchService.startManuel();
-        }
-
         return "ok";
     }
 
+    @PostMapping("/upload2") //   @WaaSecured(RoleEnum.DATA_IMPORT)
+    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('FACULTY') or hasAuthority('STUDENT')")
+    public String uploadFile2(@RequestParam MultipartFile file) throws Exception {
+        System.out.println("step2");
+
+        byte[] bytes = file.getBytes();
+            Path path = Paths.get("./attendance.csv");
+            Files.write(path, bytes);
+            //batchService.startBarcode();
+        return "ok";
+    }
 
 }
