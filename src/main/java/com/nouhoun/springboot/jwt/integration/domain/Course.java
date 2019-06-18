@@ -20,5 +20,4 @@ public class Course {
 
     private String COURSENAME;
 
-    private long BLOCKID;
 }

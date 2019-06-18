@@ -21,5 +21,7 @@ public class Coursedetail {
 
     private long COURSEID;
 
+    private String BLOCKID;
+
     private String STUDENTID;
 }
