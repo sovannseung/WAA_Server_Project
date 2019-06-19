@@ -15,12 +15,11 @@ INSERT INTO faculty (id,first_name,last_name) VALUES (1 ,'Edwin','Bernal' );
 INSERT INTO faculty (id,first_name,last_name) VALUES (2 ,'Babita','Lamichhane' );
 
 --CREDENTIALs
-INSERT INTO credential (id,email, password,student_id) VALUES (1 ,'sseung@mum.edu', '12345',1);
-INSERT INTO credential (id,email, password,student_id) VALUES (2 ,'sjungrana@mum.edu', '12345',2);
+INSERT INTO credential (id,email, password,student_id) VALUES (1 ,'sseung@mum.edu', '12345',1); -- Student
+INSERT INTO credential (id,email, password,student_id) VALUES (2 ,'sjungrana@mum.edu', '12345',2); -- Student
 
-INSERT INTO credential (id,email, password,faculty_id) VALUES (3 ,'ebernal@mum.edu', '12345',1);
-INSERT INTO credential (id,email, password,faculty_id) VALUES (4 ,'blamichhane@mum.edu', '12345',2);
-
+INSERT INTO credential (id,email, password,faculty_id) VALUES (3 ,'ebernal@mum.edu', '12345',1); -- Faculty
+INSERT INTO credential (id,email, password,faculty_id) VALUES (4 ,'blamichhane@mum.edu', '12345',2); -- Admin
 
 
 --ROLEs
