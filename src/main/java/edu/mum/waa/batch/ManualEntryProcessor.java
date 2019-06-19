@@ -38,7 +38,8 @@ public class ManualEntryProcessor implements ItemProcessor<ManualModel, Attendan
 
 
         //Set Student
-        attendanceDto.setStudent(studentService.findStudentByStudentId(manualModel.getStudentId()));
+
+        attendanceDto.setStudent(studentService.findStudentByStudentId(manualModel.getStudentId().replaceAll("-","").replaceAll("000","") ));
 
         //Set Block
         attendanceDto.setBlock(blockService.findBlockByStartDateBeforeAndEndDateAfter(attendanceDto.getDateTime()));
