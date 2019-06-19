@@ -6,6 +6,8 @@ INSERT INTO entry (id,name) VALUES (2,'2016-December');
 --STUDENTs
 INSERT INTO student (id,barcode, student_Id,entry_id,first_name,last_name) VALUES(1 ,'7888', '986842',1,'Sovann','Seung' );
 INSERT INTO student (id,barcode, student_Id,entry_id,first_name,last_name) VALUES(2 ,'7326', '986888',2,'Solum','Jung Rana' );
+INSERT INTO student (id,barcode, student_Id,entry_id,first_name,last_name) VALUES(3 ,'1234', '984835',1,'Babita','Lami' );
+INSERT INTO student (id,barcode, student_Id,entry_id,first_name,last_name) VALUES(4 ,'5678', '986924',2,'Gregorio','Bernal' );
 
 
 --FACULTYs

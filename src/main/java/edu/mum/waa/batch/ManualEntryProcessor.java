@@ -30,6 +30,9 @@ public class ManualEntryProcessor implements ItemProcessor<ManualModel, Attendan
 
         //Set Date
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        if (manualModel.getDate().length() <8)
+            formatter = DateTimeFormatter.ofPattern("MM/dd/yy");
+
         AttendanceDto attendanceDto = new AttendanceDto();
         attendanceDto.setDateTime(LocalDate.parse(manualModel.getDate(), formatter));
 

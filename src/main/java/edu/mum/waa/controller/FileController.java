@@ -24,9 +24,9 @@ public class FileController {
         this.batchService = batchService;
     }
 
-    @PostMapping("/upload")
-    @WaaSecured(RoleEnum.DATA_IMPORT)
+    @PostMapping("/upload") //@WaaSecured(RoleEnum.DATA_IMPORT)
     public String uploadFile(@RequestParam MultipartFile file) throws Exception {
+        System.out.println("receive a file");
         byte[] bytes = file.getBytes();
         if (file.getOriginalFilename().equals("attendance.csv")) {
             Path path = Paths.get("./attendance.csv");

@@ -29,6 +29,10 @@ public class BarcodeProcessor implements ItemProcessor<BarcodeModel, AttendanceD
 
         //Set Date
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yy");
+
+        if (barcodeModel.getDate().length() >8)
+            formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+
         AttendanceDto attendanceDto = new AttendanceDto();
         attendanceDto.setDateTime(LocalDate.parse(barcodeModel.getDate(), formatter));
 
