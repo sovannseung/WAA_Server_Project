@@ -1,0 +1,5 @@
+
+.idea/workspace.xml
+*.class
+target/classes/edu/mum/waa/batch/ManualEntryProcessor.class
+*.class
