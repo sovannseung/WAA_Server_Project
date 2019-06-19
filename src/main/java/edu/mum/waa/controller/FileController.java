@@ -28,16 +28,9 @@ public class FileController {
     public String uploadFile(@RequestParam MultipartFile file) throws Exception {
         System.out.println("receive a file from barcode reader");
         byte[] bytes = file.getBytes();
-//        if (file.getOriginalFilename().equals("attendance.csv")) {
             Path path = Paths.get("./attendance.csv");
             Files.write(path, bytes);
             batchService.startBarcode();
-//        } else {
-//            Path path = Paths.get("./manual.csv");
-//            Files.write(path, bytes);
-//            batchService.startManuel();
-//        }
-
         return "ok";
     }
 
@@ -45,16 +38,9 @@ public class FileController {
     public String uploadFileManual(@RequestParam MultipartFile file) throws Exception {
         System.out.println("receive a file manual");
         byte[] bytes = file.getBytes();
-//        if (file.getOriginalFilename().equals("attendance.csv")) {
-//            Path path = Paths.get("./attendance.csv");
-//            Files.write(path, bytes);
-//            batchService.startBarcode();
-//        } else {
             Path path = Paths.get("./manual.csv");
             Files.write(path, bytes);
             batchService.startManuel();
-//        }
-
         return "ok";
     }
 
