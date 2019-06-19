@@ -54,8 +54,8 @@ INSERT INTO credential_roles (credential_id,roles_id) VALUES  (4 ,8);
 
 --BLOCKs
 INSERT INTO block (id,start_Date,end_Date,name) VALUES(1 ,'2016-11-01', '2016-11-30','2016-November' );
-INSERT INTO block (id,start_Date,end_Date,name) VALUES(2,'2016-12-01', '2016-12-30','2016-December' );
-INSERT INTO block (id,start_Date,end_Date,name) VALUES(3 ,'2017-01-01', '2017-01-30','2017-January' );
+INSERT INTO block (id,start_Date,end_Date,name) VALUES(2,'2016-12-01', '2016-12-31','2016-December' );
+INSERT INTO block (id,start_Date,end_Date,name) VALUES(3 ,'2017-01-01', '2017-01-31','2017-January' );
 INSERT INTO block (id,start_Date,end_Date,name) VALUES(4 ,'2017-02-01', '2017-02-28','2017-February' );
 
 --LOCATIONs
