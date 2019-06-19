@@ -1,8 +1,15 @@
-
 .idea/workspace.xml
 *.class
+target/
+.idea/
 target/classes/edu/mum/waa/batch/ManualEntryProcessor.class
 *.class
 .idea/workspace.xml
 target/classes/edu/mum/waa/batch/ManualEntryProcessor.class
 *.class
+.idea/workspace.xml
+target/classes/data.sql
+target/classes/edu/mum/waa/batch/BatchConfig.class
+target/classes/edu/mum/waa/batch/ManualEntryProcessor.class
+target/classes/edu/mum/waa/controller/FileController.class
+target/classes/edu/mum/waa/service/BatchServiceImpl.class

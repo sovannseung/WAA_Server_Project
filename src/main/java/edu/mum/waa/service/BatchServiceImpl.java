@@ -20,7 +20,7 @@ public class BatchServiceImpl implements BatchService {
     Job barcodeJob;
 
     @Autowired
-    @Qualifier("manuelJob")
+    @Qualifier("manualJob")
     Job manuelJob;
 
     public void startBarcode() throws Exception {
@@ -32,7 +32,7 @@ public class BatchServiceImpl implements BatchService {
 
     public void startManuel() throws Exception {
         JobParameters params = new JobParametersBuilder()
-                .addString("barcodeJob", String.valueOf(System.currentTimeMillis()))
+                .addString("manualJob", String.valueOf(System.currentTimeMillis()))
                 .toJobParameters();
         jobLauncher.run(manuelJob, params);
     }

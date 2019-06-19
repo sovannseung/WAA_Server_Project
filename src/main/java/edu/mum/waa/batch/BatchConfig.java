@@ -49,7 +49,7 @@ public class BatchConfig {
     @Bean
     protected Step step1()
     {
-        return steps.get("step1").<BarcodeModel, AttendanceDto> chunk(1000)
+        return steps.get("step1").<BarcodeModel, AttendanceDto> chunk(100)
                 .reader(itemReader).processor(itemProcessor).writer(itemWriter).build();
     }
 
@@ -57,7 +57,7 @@ public class BatchConfig {
     @Bean
     protected Step step2()
     {
-        return steps.get("step2").<ManualModel, AttendanceDto> chunk(1000)
+        return steps.get("step2").<ManualModel, AttendanceDto> chunk(100)
                 .reader(itemReaderManualModel).processor(itemProcessorManualModel).writer(itemWriter).build();
     }
 
@@ -69,7 +69,7 @@ public class BatchConfig {
                 .build();
     }
 
-    @Bean(name = "manuelJob")
+    @Bean(name = "manualJob")
     public Job manualJob(){
         return jobs.get("manualJob")
                 .incrementer(new RunIdIncrementer())
