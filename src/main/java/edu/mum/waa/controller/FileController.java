@@ -26,20 +26,36 @@ public class FileController {
 
     @PostMapping("/upload") //@WaaSecured(RoleEnum.DATA_IMPORT)
     public String uploadFile(@RequestParam MultipartFile file) throws Exception {
-        System.out.println("receive a file");
+        System.out.println("receive a file from barcode reader");
         byte[] bytes = file.getBytes();
-        if (file.getOriginalFilename().equals("attendance.csv")) {
+//        if (file.getOriginalFilename().equals("attendance.csv")) {
             Path path = Paths.get("./attendance.csv");
             Files.write(path, bytes);
             batchService.startBarcode();
-        } else {
-            Path path = Paths.get("./manual.csv");
-            Files.write(path, bytes);
-            batchService.startManuel();
-        }
+//        } else {
+//            Path path = Paths.get("./manual.csv");
+//            Files.write(path, bytes);
+//            batchService.startManuel();
+//        }
 
         return "ok";
     }
 
+    @PostMapping("/uploadManual") //@WaaSecured(RoleEnum.DATA_IMPORT)
+    public String uploadFileManual(@RequestParam MultipartFile file) throws Exception {
+        System.out.println("receive a file manual");
+        byte[] bytes = file.getBytes();
+//        if (file.getOriginalFilename().equals("attendance.csv")) {
+//            Path path = Paths.get("./attendance.csv");
+//            Files.write(path, bytes);
+//            batchService.startBarcode();
+//        } else {
+            Path path = Paths.get("./manual.csv");
+            Files.write(path, bytes);
+            batchService.startManuel();
+//        }
+
+        return "ok";
+    }
 
 }
